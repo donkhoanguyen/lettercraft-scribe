@@ -4,6 +4,7 @@ interface LetterContent {
   text: string;
   imageUrl?: string;
   imageAlt?: string;
+  overlayText?: string;
 }
 
 interface LetterProps {
@@ -22,12 +23,19 @@ const Letter: React.FC<LetterProps> = ({ content }) => {
           </div>
           
           {content.imageUrl && (
-            <div className="mt-8">
+            <div className="mt-8 relative">
               <img 
                 src={content.imageUrl} 
                 alt={content.imageAlt || "Letter image"} 
                 className="rounded-md w-full h-auto shadow-sm"
               />
+              {content.overlayText && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <p className="text-white text-2xl font-serif font-bold bg-black bg-opacity-40 p-4 rounded">
+                    {content.overlayText}
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
