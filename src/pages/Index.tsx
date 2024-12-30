@@ -17,10 +17,13 @@ const Index = () => {
     mediaAlt: "Mai Xinh",
     overlayText: "Mai rat xinh"
   });
+  
+// Combine both letterContents into an array
+  const letterContents = [letterContent1, letterContent2];
 
   return (
     <div className="min-h-screen py-12 px-4">
-      <Letter content={letterContent1, letterContent2} />
+      <Letter content={letterContents} />
     </div>
   );
 };
