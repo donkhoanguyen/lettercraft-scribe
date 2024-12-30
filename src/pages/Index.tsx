@@ -17,9 +17,23 @@ const Index = () => {
   });
 
   const [letterContent3] = useState({
-    text: "Nhân dịp sinh nhật em thì anh muốn chúc em hạnh phúc hơn, vui vẻ hơn, và với sự tài giỏi và consistent của em thì mọi thành công em mong muốn sẽ sớm đến. Anh hân hạnh được có mặt trong hành trình này cùng em, và khi em về anh sẽ có steak và pasta và tiramisu ngon nhất trên đời cho em.\n\nBest,\n\nYêu Ngọc Mai",
+    text: "Được ở gần và học hỏi từ em hàng ngày là một hân hạnh lớn của anh, và nhân dịp sinh nhật xa xôi xin phép gửi em một cái thơm má như này đã nhá.",
+    mediaUrl: "/IMG_9195.gif", // Replace with your .mp4 video once converted
+    mediaType: "gif" as const,
+    mediaAlt: "Mai Xinh"
+  });
+
+  const [letterContent4] = useState({
+    text: "Và cuối cùng anh muốn chúc em hạnh phúc hơn, vui vẻ hơn, và với sự tài giỏi và consistent của em thì mọi thành công em mong muốn sẽ sớm đến. Anh hân hạnh được có mặt trong hành trình này cùng em, và khi em về anh sẽ có steak và pasta và tiramisu ngon nhất trên đời cho em.\n\nBest,\n\nYêu Ngọc Mai",
     mediaUrl: "/IMG_9932.JPG", // Replace with your .mp4 video once converted
     mediaType: "image" as const,
+    mediaAlt: "Mai Xinh"
+  });
+
+  const [letterContent5] = useState({
+    text: "Dm Bonus =)))))))",
+    mediaUrl: "/IMG_9185.JPG", // Replace with your .mp4 video once converted
+    mediaType: "video" as const,
     mediaAlt: "Mai Xinh"
   });
 
@@ -29,6 +43,8 @@ const Index = () => {
       <Letter content={letterContent1} />
       <Letter content={letterContent2} />
       <Letter content={letterContent3} />
+      <Letter content={letterContent4} />
+      <Letter content={letterContent5} />
     </div>
   );
 };
