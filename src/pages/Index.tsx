@@ -3,11 +3,23 @@ import Letter from '../components/Letter';
 
 const Index = () => {
   const [letterContent] = useState({
-    text: "Chào Ngọc Mai,\n\nAnh nhớ em siêu nhiều luôn.\n\nI hope this letter finds you well. This is an example of how you can create beautiful digital letters with text, images, GIFs, and videos!\n\nBest regards,\nYour Name",
-    mediaUrl: "/IMG_8202.mp4", // Replace with your .mp4 video once converted
-    mediaType: "video" as const,
-    mediaAlt: "Mai Xinh",
-    overlayText: "Mai rat xinh"
+    content: [
+      {
+        type: 'text',
+        value: "Chào Ngọc Mai,\n\nAnh nhớ em siêu nhiều luôn.\n\nTrong những ngày em đi thì anh có xem lại những video trước đây anh có với em. Anh thấy em trẻ trung xinh đẹp và thật đáng yêu, và mỗi lần nhìn thấy em xinh đẹp như vậy anh lại thấy ngạo nghễ hơn một chút",
+      },
+      {
+        type: 'media',
+        mediaUrl: "/IMG_8202.mp4",
+        mediaType: "video" as const,
+        mediaAlt: "Mai Xinh",
+        overlayText: "Mai rất xinh"
+      },
+      {
+        type: 'text',
+        value: "Best regards,\nYour Name"
+      },
+    ]
   });
 
   return (
