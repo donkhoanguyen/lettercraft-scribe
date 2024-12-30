@@ -21,7 +21,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen py-12 px-4">
-      <Letter content={[letterContent1, letterContent2]} />
+      <Letter content={letterContent1} />
     </div>
   );
 };
