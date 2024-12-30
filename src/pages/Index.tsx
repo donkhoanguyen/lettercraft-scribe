@@ -32,7 +32,7 @@ const Index = () => {
 
   const [letterContent5] = useState({
     text: "Dm Bonus =)))))))",
-    mediaUrl: "/IMG_9185.JPG", // Replace with your .mp4 video once converted
+    mediaUrl: "/IMG_9185.mp4", // Replace with your .mp4 video once converted
     mediaType: "video" as const,
     mediaAlt: "Mai Xinh"
   });
