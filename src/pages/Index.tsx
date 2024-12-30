@@ -3,9 +3,10 @@ import Letter from '../components/Letter';
 
 const Index = () => {
   const [letterContent] = useState({
-    text: "Chào Ngọc Mai,\n\nAnh nhớ em siêu nhiều luôn.\n\nI hope this letter finds you well. This is an example of how you can create beautiful digital letters with both text and images. You can even add text overlays on top of images!\n\nBest regards,\nYour Name",
-    imageUrl: "/placeholder.svg", // Using the placeholder image from public folder
-    imageAlt: "A placeholder image",
+    text: "Chào Ngọc Mai,\n\nAnh nhớ em siêu nhiều luôn.\n\nI hope this letter finds you well. This is an example of how you can create beautiful digital letters with text, images, GIFs, and videos!\n\nBest regards,\nYour Name",
+    mediaUrl: "/placeholder.svg", // You can use "/your-video.mp4" for videos or "/your-animation.gif" for GIFs
+    mediaType: "image" as const, // Use "video" for videos or "gif" for GIFs
+    mediaAlt: "A placeholder image",
     overlayText: "Innovation Lights The Way"
   });
 

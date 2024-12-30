@@ -2,8 +2,9 @@ import React from 'react';
 
 interface LetterContent {
   text: string;
-  imageUrl?: string;
-  imageAlt?: string;
+  mediaUrl?: string;
+  mediaType?: 'image' | 'video' | 'gif';
+  mediaAlt?: string;
   overlayText?: string;
 }
 
@@ -12,6 +13,34 @@ interface LetterProps {
 }
 
 const Letter: React.FC<LetterProps> = ({ content }) => {
+  const renderMedia = () => {
+    if (!content.mediaUrl) return null;
+
+    if (content.mediaType === 'video') {
+      return (
+        <video 
+          className="rounded-md w-full h-auto shadow-sm"
+          controls
+          autoPlay
+          loop
+          muted
+        >
+          <source src={content.mediaUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      );
+    }
+
+    // For both images and GIFs, we use the img tag
+    return (
+      <img 
+        src={content.mediaUrl} 
+        alt={content.mediaAlt || "Letter media"} 
+        className="rounded-md w-full h-auto shadow-sm"
+      />
+    );
+  };
+
   return (
     <div className="p-4 md:p-8 max-w-2xl mx-auto">
       <div 
@@ -22,13 +51,9 @@ const Letter: React.FC<LetterProps> = ({ content }) => {
             {content.text}
           </div>
           
-          {content.imageUrl && (
+          {content.mediaUrl && (
             <div className="mt-8 relative">
-              <img 
-                src={content.imageUrl} 
-                alt={content.imageAlt || "Letter image"} 
-                className="rounded-md w-full h-auto shadow-sm"
-              />
+              {renderMedia()}
               {content.overlayText && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-white text-2xl font-serif font-bold bg-black bg-opacity-40 p-4 rounded">
